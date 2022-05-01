@@ -1,0 +1,5 @@
+/** * */ package pakage; import java.util.Arrays; import java.util.HashMap; 
+/** * @author Arvind.Kumar * */ 
+public class Indexfinds 
+{ public int[] twoSum(int[] numbers, 
+int target) { HashMap<Integer,Integer> Indexfind = new HashMap<Integer,Integer>(); for(int i = 0; i < numbers.length; i++){ Integer diff = (Integer)(target - numbers[i]); if(Indexfind.containsKey(diff)){ int toReturn[] = {Indexfind.get(diff), i}; System.out.print(diff); System.out.println(Indexfind.get(diff)); // return toReturn; System.out.println(Arrays.toString(toReturn)); return toReturn; } Indexfind.put(numbers[i], i); System.out.println(numbers[i]); System.out.println(i); } return null; } /** * @param args */ public static void main(String[] args) { int[] numbs = {15, 23, 48, 102, 43, 11, 79, 93}; Indexfinds ts = new Indexfinds(); ts.twoSum(numbs, 125); } }
