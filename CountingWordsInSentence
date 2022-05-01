@@ -1,0 +1,64 @@
+package pakage;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @author Arvind.Kumar
+ *
+ */
+
+/**
+ *  @category LeetCode preparation
+ *  <p> return type of HashMap and Printing in HashMap doesn't require iterations
+ *  */
+
+public class CountingWordsInString {
+
+public HashMap<String, Integer> uniquewordscount (String str) {
+
+HashMap <String, Integer> Values = new HashMap <String,Integer>();
+String [] collectioncovert = str.split(" ");
+
+for (int i=0; i<collectioncovert.length; i++){
+if (Values.containsKey(collectioncovert[i])){
+
+int count =  Values.get(collectioncovert[i]);
+Values.put(collectioncovert[i], count+1);
+}
+
+else
+Values.put(collectioncovert[i], 1);
+}
+
+
+//System.out.println(Values);
+return Values;
+
+
+
+
+}
+
+
+/**
+* @param args
+*/
+
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+
+CountingWordsInString coutingwords = new CountingWordsInString();
+String strb = "this is as a count six mastry six times";
+
+HashMap<String,Integer> returnvalues = coutingwords.uniquewordscount(strb);
+
+String newLine = System.getProperty("line.separator");
+//This will retrieve line separator dependent on OS.
+
+System.out.println("Printing returned values in funtion"+ newLine + returnvalues);
+
+}
+
+}
