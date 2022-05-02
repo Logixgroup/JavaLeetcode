@@ -1,0 +1,29 @@
+package pakage;
+
+import java.util.Arrays;
+
+public class characterAt {
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+
+String str = "ARVIND";
+
+// create an array of characters. Length is str' length
+char[] vArray = new char[str.length()];
+
+
+
+for (int i = str.length()-1; i >= 0; i--) {
+// add each character to the character array
+vArray[i] = str.charAt(i);
+System.out.print(str.charAt(i));
+
+}
+
+System.out.print("\n");
+System.out.println("Reversed array is: \n"+ Arrays.toString(vArray));
+
+}
+
+}
