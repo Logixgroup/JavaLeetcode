@@ -1,0 +1,50 @@
+/**
+ *
+ */
+package pakage;
+
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+/**
+ * @author Arvind.Kumar
+ *
+ */
+public class Arraytoprint {
+
+/**
+* @param args
+*/
+public static void main(String[] args) {
+Integer[] oneDimensionalArr = {1,4,3};
+
+System.out.println(Arrays.toString(oneDimensionalArr));
+System.out.println(Arrays.asList(oneDimensionalArr));  
+System.out.println(Arrays.deepToString(oneDimensionalArr));
+
+
+{
+Integer[] intArray = {9,8,2,5,46,12,34,76};
+
+// creating a List of Integer
+List <Integer> list = Arrays.asList(intArray);
+
+// creating an iterator of Integer List
+Iterator<Integer> it = list.iterator();
+
+// if List has elements to be iterated
+while(it.hasNext()) {
+   System.out.print(it.next());
+   
+
+}
+
+String newLine1 = System.getProperty("line.separator");System.out.println(newLine1);
+Arrays.stream(intArray).forEach(System.out::print);
+
+}
+
+}
+
+}
