@@ -1,0 +1,38 @@
+package pakage;
+
+public class Capitalfirstlettersineachword {
+
+private static String Capitalsentence;
+
+public static String capitalizedwordsInSentence(String lowercasestr) {
+
+String[] words = lowercasestr.split("\\s");
+
+String Capitalsentence ="";
+
+for (String word : words) {
+
+String letterUpper = word.substring(0,1).toUpperCase();
+// int a = words.length;
+String lowerpart = word.substring(1);
+
+
+
+Capitalsentence += letterUpper + lowerpart + " ";
+
+}
+
+return Capitalsentence;
+
+}
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+
+System.out.println(
+Capitalfirstlettersineachword.capitalizedwordsInSentence("humty dumpty played pocker with friends"));
+
+
+}
+
+}
