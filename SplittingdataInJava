@@ -1,0 +1,45 @@
+package pakage;
+
+public class splitanditerate {
+
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+
+String sc = "Tangoe - eCircuit Training,CircuiteTraining - 6 Sessions,Tango - Serangoon;Kickboxingx- PD Team,Kickkboxing,Boonx Lay";
+String [] cc = sc.split(";");
+
+//System.out.println(cc[1].toString() + cc.length );
+
+
+for (int i=0;i<cc.length;i++){
+
+String [] subs = sc.split(",");
+System.out.println("Product : " +subs[0] + "\n");
+System.out.println("Center : " +subs[1] + "\n");
+System.out.println("Session : " +subs[2] + "\n");
+System.out.println("offer : " +subs[3] + "\n");
+
+}
+
+/*
+
+public void selectSubscriptions() {
+String[] productsList=inputDataList.get("ProductsList").split(";");
+for(String productDetails:productsList) {
+String[] productData=productDetails.split(",");
+clickElement(driver, selectSubscriptions);
+selectDropdown(driver, category, inputDataList.get("Category"));
+selectDropdown(driver, product, productData[0]);
+selectDropdown(driver, offer, productData[1]);
+selectDropdown(driver, center, productData[2]);
+clickElement(driver, saveBtn);
+sleepinSeconds(1);
+screenShot(driver);
+}
+
+*/
+
+}
+
+}
