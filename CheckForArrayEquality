@@ -1,0 +1,35 @@
+package pakage;
+ 
+public class CheckForArrayEquality {
+ 
+public static void main(String[] args) {
+ 
+int[] arr1 = { 10, 20, 30, 41 };
+int[] arr2 = { 10, 20, 30, 40 };
+ 
+// Let's assume both arrays are equal.
+boolean isEqual = true;
+ 
+// We need to check length of arrays
+if (arr1.length == arr2.length) {
+// As lengths of arrays are same, we should iterate arrays now
+for (int i = 0; i< arr1.length; i++) {
+// If elements are not equals at any index, set the value false and creak loop
+if (arr1[i] != arr2[i]) {
+isEqual = false;
+break;
+}
+}
+}
+// Lengths are not same i.e arrays are not equal.
+else
+isEqual = false;
+ 
+if (isEqual)
+System.out.println("Arrays are equal");
+else
+System.out.println("Arrays are not equal");
+ 
+}
+ 
+}
