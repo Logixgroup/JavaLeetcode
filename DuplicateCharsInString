@@ -1,0 +1,71 @@
+
+/**
+ *
+ */
+package pakage;
+
+/**
+ * @author Arvind.Kumar
+ *
+ */
+import java.util.Arrays;
+
+public class DuplicateCharsInString
+
+{
+
+public static void main(String[] args) {
+
+String string = "check duplicate characters in string ARVVIND JULY 2021 %% >>";
+
+string = string.toLowerCase();
+string = string.replaceAll("\\s", ""); //Removing all the spaces
+string = string.replaceAll("\\d", ""); //Replacing all the digits from
+string = string.replaceAll("[^a-zA-Z0-9]", ""); //Replacing special characters
+
+char[] charAr = string.toCharArray();
+Arrays.sort(charAr);
+
+for (int i = 1; i < charAr.length;) {
+
+int count = recursivestring(charAr, i, 1);
+
+if (count > 1) {
+
+System.out.println("'" + charAr[i] + "' comes " + count + " times");
+
+i = i + count;
+}
+
+else
+
+i++;
+
+}
+
+}
+
+private static int recursivestring(char[] charAr, int i, int count)
+
+{
+if (ifEquals(charAr[i - 1], charAr[i]))
+
+{
+count = count + recursivestring(charAr, ++i, count);
+
+}
+
+return count;
+
+}
+
+public static boolean
+
+ifEquals(char a, char b)
+
+{
+return a == b;
+
+}
+
+}
