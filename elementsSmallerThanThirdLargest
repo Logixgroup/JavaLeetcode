@@ -1,0 +1,32 @@
+import java.util.*;
+
+class Codechef {
+    public static void main(String[] args) {
+        int first = Integer.MIN_VALUE;
+        int second = Integer.MIN_VALUE;
+        int third = Integer.MIN_VALUE;
+
+        int[] a = {1, 2, 3, 4, -5, 6, 8, 9};
+
+        // Find first, second, third largest
+        for (int num : a) {
+            if (num > first) {
+                third = second;
+                second = first;
+                first = num;
+            } else if (num > second && num != first) {
+                third = second;
+                second = num;
+            } else if (num > third && num != second && num != first) {
+                third = num;
+            }
+        }
+
+        System.out.println("Elements smaller than third largest (" + third + "):");
+        for (int num : a) {
+            if (num < third) {
+                System.out.println(num);
+            }
+        }
+    }
+}
