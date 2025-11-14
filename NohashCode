@@ -1,0 +1,20 @@
+/* NO HASHCODE RESULTED IN TWO 
+map.put(new Emp(1), "A") → adds a key-value pair to the map.
+map.put(new Emp(1), "B") → creates a new Emp object with the same id:
+equals() would return true if compared directly.
+But hash codes are different, so HashMap treats it as a different key and adds it as a new entry. */
+
+class Emp {
+    int id;
+    Emp(int i){ id = i; }
+    
+    public boolean equals(Object o){
+        return ((Emp)o).id == id;
+    }
+}
+
+Map<Emp, String> map = new HashMap<>();
+map.put(new Emp(1), "A");
+map.put(new Emp(1), "B");
+
+System.out.println(map.size()); //2
