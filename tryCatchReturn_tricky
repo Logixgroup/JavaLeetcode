@@ -1,0 +1,41 @@
+/* 
+Every method call in Java creates a stack frame on the thread stack.
+
+A stack frame contains:
+
+Local variables
+
+Operand stack
+
+Return address
+
+A slot to hold return value (for all non-void methods) When you execute a return:
+
+Step 1 → The return value is pushed onto the operand stack.This is the temporary holding area.
+Step 2 → JVM records that the method is about to return. But does not exit the method yet.
+Step 3 → Before returning, the JVM MUST execute the finally block. Even if finally modifies variables,
+the return value on the operand stack is NOT recalculated.
+Step 4 → After finally completes, the value from the operand stack is used as the actual return value.*/
+
+class Codechef
+{
+      static  int  i= 1;
+      static int methodany() {
+		    try{
+		        i = i+1;
+		        return i;
+		    }
+		    catch (IllegalArgumentException e) {
+		        i= i+2; 
+		    }
+		    finally{ 
+		        i = i+3; //5
+		    }
+		    return i;
+		}
+		     
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    System.out.println(methodany());
+	}
+}
