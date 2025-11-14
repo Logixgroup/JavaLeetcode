@@ -1,0 +1,23 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{ 
+	  String input = "(((((())))))";
+	 int count = 0;
+	  for(char ch: input.toCharArray()){ 
+	      if(ch=='('){
+	          count++;
+	      } else if (ch==')'){
+	          count--;
+	            }
+	      }
+	      
+	System.out.println((count==0)?"balanced":"nonbalanced");
+	      
+	  }
+	}
+
