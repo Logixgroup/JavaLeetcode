@@ -1,0 +1,43 @@
+//moveeventostartofarray
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int a[]={3,2,6,8,3,9,6,4,5,9,3,1,6,8};
+		int left = 0;
+		int right = a.length-1;
+		
+		while(left<right){
+		    
+		    
+		    if(a[left]%2==0 && left<right){
+		        left++;
+		    }
+		    else if(a[right]%2==1 && left<right ) {
+		        right--;
+		    }
+		    else{
+		       int temp =a[left];
+		        a[left]=a[right];
+		        a[right] = temp;
+		        left++;
+		        right--;
+		        
+		    }
+		      
+		   }
+		   
+		   //for(int j=0;j<=a.length-1;j++){
+		       
+		       System.out.println(Arrays.toString(a));
+		    
+		    
+	//	}
+
+	}
+}
