@@ -1,0 +1,44 @@
+//Simple Alternating interleaving arrays 
+//ArrayZipper
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class MergeAlternatingArrays
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	
+	        char[] s1= {'A','B','C','D','E','t','Z'};
+            char[] s2= {'c','d','e','f'};
+            char[] s3 = new char[s1.length+s2.length];
+
+           // Output- {a,C,b,D,c,E,d,F,e,t,z};
+            
+            int i=0;int j=0; int k=0;
+            
+            while(i<s1.length && j<s2.length) {
+                s3[k]= Character.toLowerCase(s1[i]);
+                i++; k++;
+            
+                s3[k] = Character.toUpperCase(s2[j]);
+                j++; k++;
+            }
+            while(i<s1.length){
+                
+                s3[k] = Character.toLowerCase(s1[i]);
+                k++;i++;
+            }
+            
+            while(j<s2.length){
+                
+                s3[k] = Character.toUpperCase(s2[j]);
+                k++;j++;
+            }
+                
+            System.out.println(Arrays.toString(s3));
+            }
+
+	    }
+	
