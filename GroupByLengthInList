@@ -1,0 +1,20 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GroupByLength
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		ArrayList<String> list = new ArrayList<>(List.of("cat","apple","Dog","Arrays","test"));
+	    HashMap<Integer,ArrayList<String>> map = new HashMap<>();
+	    for(String a: list){
+	        if(!map.containsKey(a.length())){
+	            map.put(a.length(),new ArrayList<>());
+	        }
+	        map.get(a.length()).add(a); 
+	    }
+		
+		System.out.println(map);
+	}
+}
