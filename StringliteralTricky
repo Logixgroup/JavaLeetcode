@@ -1,0 +1,37 @@
+String a = "Hello";
+String b = "Hello";
+String c = a;
+a = new String("Hello");
+
+System.out.println(a == b);
+System.out.println(a.equals(b));
+System.out.println("Result =" + c.equals(b));
+System.out.println(c == b);
+
+/* 
+Step-by-step memory behavior
+
+1. "Hello" is in String pool
+Both a and b initially point to the same pooled object.
+
+
+2. c = a;
+→ c also points to the same pooled object.
+
+
+3. a = new String("Hello");
+→ Now a refers to a new object in heap, not pool.
+
+
+
+Outputs
+
+Statement	Explanation	Output
+
+a == b	a → heap object, b → pool object	false
+a.equals(b)	Compares values	true
+"Result =" + c.equals(b)	c → pooled "Hello", b → pooled "Hello"	Result =true
+c == b	Both still point to same pooled string	true
+
+
+***//
