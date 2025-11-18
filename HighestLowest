@@ -1,0 +1,28 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.util.stream.*;
+
+class 
+{
+    public static void main(String[] args) throws java.lang.Exception
+    {
+        int [] arr = {1,2,3,4,6,7,8,9,5,6};
+        int highestorder = 3;
+        int lowestorder = 1;
+        
+        System.out.println(
+            
+            //Second Highest
+            Arrays.stream(arr).boxed().distinct().sorted(Comparator.reverseOrder()).skip(highestorder).findFirst().orElse(null)
+            
+            + " "+ Arrays.stream(arr).boxed().distinct().sorted().skip(lowestorder).findFirst().orElse(null)
+            
+        
+            
+            );
+
+        
+
+    }
+}
