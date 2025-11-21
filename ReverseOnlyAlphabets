@@ -1,0 +1,37 @@
+import java.util.*;
+
+class ReverseOnlyAlphabets {
+    public static void main(String[] args) throws Exception {
+
+        String str = "A1RV2IND3KUMA4R HASI5JA@#$";
+        String[] words = str.split(" ");
+        String output = "";
+
+        for (String word : words) {
+
+            char[] arr = word.toCharArray();
+            Stack<Character> stack = new Stack<>();
+
+            // Step 1: take only alphabets into stack (to reverse)
+            for (char ch : arr) {
+                if (Character.isAlphabetic(ch)) {
+                    stack.push(ch);
+                }
+            }
+
+            // Step 2: rebuild the word — replace alphabets with reversed ones
+            StringBuilder result = new StringBuilder();
+            for (char ch : arr) {
+                if (Character.isAlphabetic(ch)) {
+                    result.append(stack.pop()); // pop gives reverse order
+                } else {
+                    result.append(ch); // keep digits/special characters same position
+                }
+            }
+
+            output += result.toString() + " ";
+        }
+
+        System.out.println(output.trim());
+    }
+}
