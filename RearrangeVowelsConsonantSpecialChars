@@ -1,0 +1,23 @@
+public class Main {
+    public static void main(String[] args) {
+        String str = "A#b*cE1f@o";
+
+        String vowels = "";
+        String consonants = "";
+        String specials = "";
+
+        for (char ch : str.toCharArray()) {
+            if (Character.isAlphabetic(ch)) {
+                if ("AEIOUaeiou".indexOf(ch) != -1)
+                    vowels += ch;       // vowel
+                else
+                    consonants += ch;   // consonant
+            } else {
+                specials += ch;         // special char or digit
+            }
+        }
+
+        String result = vowels + consonants + specials;
+        System.out.println(result);
+    }
+}
