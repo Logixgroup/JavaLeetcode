@@ -1,0 +1,22 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.util.stream.*;
+
+class SecondMostRepeatedCharacter
+{
+    public static void main(String[] args) {
+
+        String str = "abcbcaa";
+        Map < Character, Integer > map = new HashMap < > ();
+
+        for (char ch: str.toCharArray()) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+        Map.Entry < Character, Integer > entry = map.entrySet().stream().sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue())).skip(1).findFirst().orElse(null);
+
+        System.out.println(entry);
+
+
+    }
+}
