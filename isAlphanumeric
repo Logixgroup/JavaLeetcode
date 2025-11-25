@@ -1,0 +1,17 @@
+public class Main {
+    public static void main(String[] args) {
+        String str = "Alex123";  // Change to test
+        System.out.println(isAlphanumeric(str) ? "Alphanumeric" : "Not Alphanumeric");
+    }
+
+    public static boolean isAlphanumeric(String str) {
+        if (str == null || str.isEmpty())
+            return false;
+
+        for (char ch : str.toCharArray()) {
+            if (!Character.isLetterOrDigit(ch))
+                return false;
+        }
+        return true;
+    }
+}
